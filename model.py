@@ -1,11 +1,11 @@
 import torch
 
-n_unique_users_train = 15318
-n_unique_recipes_train = 12897
+n_unique_users = 25076
+n_unique_recipes = 172606
 
 # Create NCF model
 class NCF(torch.nn.Module):
-    def __init__(self, n_users=n_unique_users_train, n_recipes=n_unique_recipes_train, n_factors=8):
+    def __init__(self, n_users=n_unique_users, n_recipes=n_unique_recipes, n_factors=8):
         super().__init__()
         self.user_embeddings = torch.nn.Embedding(n_users, n_factors)
         self.recipe_embeddings = torch.nn.Embedding(n_recipes, n_factors)
