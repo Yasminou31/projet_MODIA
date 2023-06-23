@@ -13,7 +13,7 @@ class NCF(torch.nn.Module):
             torch.nn.Linear(in_features=n_factors*2, out_features=64),
             torch.nn.Linear(in_features=64, out_features=32),
             torch.nn.Linear(in_features=32, out_features=1),
-            torch.nn.Sigmoid()
+            torch.nn.Softmax()
         )
 
     def forward(self, user, recipe):
