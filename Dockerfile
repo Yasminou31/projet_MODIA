@@ -4,11 +4,8 @@ FROM jupyter/datascience-notebook
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the requirements file to the working directory
-COPY requirements.txt ./
-
-# Install the required Python packages # --no-cache-dir -r requirements.txt
-RUN pip install -r requirements.txt
+# Install the missing dependencies
+RUN pip install gradio torch
 
 # Copy the necessary files to run the main script to the working directory
 COPY weights.pth user2id.pkl recipe2id.pkl test_script.csv model.py main.py ./
