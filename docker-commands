@@ -1,0 +1,2 @@
+docker build --build-arg SCRIPT_NAME=recommender_app.py -t recommender .
+docker run -it -p 8080:8080 -v "$(pwd)":/app recommender
