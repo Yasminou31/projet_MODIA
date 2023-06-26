@@ -1,6 +1,28 @@
 # Projet MODIA 2022
 ## EL MOUSTAAID Mountassir, OLEAGA Ainhoa, SAVARY Thomas, HECKER Yasmine
 
+# Bonus : Lancer le Docker
+
+## Lancer le script main.py
+Pour lancer le docker avec le script main.py qui fait la prédiction sur les données de test test_script.csv, il faut d'abord construire l'image avec la commande suivante :
+```
+docker build --build-arg SCRIPT_NAME=main.py -t main .
+```
+Puis, il faut lancer le docker avec la commande suivante :
+```
+docker run -it -v "$(pwd)":/app main
+```
+## Lancer le script recommender_app.py
+Pour lancer le docker avec l'application gradio, il faut d'abord construire l'image avec la commande suivante :
+```
+docker build --build-arg SCRIPT_NAME=recommender_app.py -t recommender .
+```
+Puis, il faut lancer le docker avec la commande suivante :
+```
+docker run -it -p 8080:8080 -v "$(pwd)":/app recommender
+```
+
+
 Dans ce projet, vous allez travailler sur des données<sup>[1](#myfootnote1)</sup>issues du site [Food.com](https://www.food.com/), un célèbre site de recettes de cuisine.   
 ![](img/food.png)
 Les données, disponibles [ici](https://drive.google.com/drive/folders/18JyoxTIrIH2s2wG6HtxGiKsdFtGSfUWm?usp=sharing), contiennent des informations sur des recettes de cuisines ainsi que des interactions de plusieurs utilisateurs avec les recettes.   
