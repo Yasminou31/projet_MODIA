@@ -32,6 +32,6 @@ if __name__=='__main__':
                 outputs=gr.outputs.Label(num_top_classes=1),
                 live=True,
                 description="Write a review and the model will predict if it is positive or negative.",
-                ).launch(debug=True, share=False, server_name="0.0.0.0", server_port=8080)
+                ).launch(debug=True, share=True, server_name="0.0.0.0", server_port=8080)
 
     

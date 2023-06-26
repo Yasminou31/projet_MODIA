@@ -8,7 +8,7 @@ WORKDIR /app
 RUN pip install gradio torch
 
 # Copy the necessary files to run the main script to the working directory
-COPY weights.pth user2id.pkl recipe2id.pkl test_script.csv model.py main.py ./
+COPY weights.pth user2id.pkl recipe2id.pkl n_users_recipes.json test_script.csv model.py main.py ./
 
 # Copy the necessary files to run the recommender app to the working directory
 COPY sentiment_model.pkl recommender_app.py ./
